@@ -22,30 +22,78 @@ public class LogicaSillasCine {
         int COL = 10 ;
         
         
-        int matsilla [][];
+        String matsilla [][];
         
         LogicaSillasCine ms = new LogicaSillasCine();
         
-        matsilla = new int[FIL][COL];
+        matsilla = new String[FIL][COL];
         ms.lea(matsilla);
         ms.escriba(matsilla);
         
         
     }
     
-    public void lea (int matsilla [][]){
+    public void lea (String matsilla [][]){
         
         int i,j;
         String num;
+        String letrasilla = JOptionPane.showInputDialog("Digite una letra");
+        int colSilla = 0 ;
+        int filSilla = (Integer.parseInt(JOptionPane.showInputDialog("Digite un numero")))-1;
+        
+        
+        switch ( letrasilla ) {
+      case "A":
+           colSilla = 0 ;
+           break;
+      case "B":
+           colSilla = 1 ;
+           break;
+      case "C":
+           colSilla = 2 ;
+           break;
+      case "D":
+           colSilla = 3 ;
+           break;
+      case "E":
+           colSilla = 4 ;
+           break;
+      case "F":
+           colSilla = 5 ;
+           break;
+      case "G":
+           colSilla = 6 ;
+           break;
+      case "H":
+           colSilla = 7 ;
+           break;
+      case "I":
+           colSilla = 8 ;
+           break;
+      case "J":
+           colSilla = 9 ;
+           break;
+      default:
+           System.out.println("error" );
+           break;
+      }
+        
+        
+        
         for(i=0;i<matsilla.length;i++)
             for(j=0;j<matsilla[i].length;j++){
-                num=JOptionPane.showInputDialog("digite un uno");
-                matsilla[i][j]=Integer.parseInt(num);
+                if(colSilla == j && filSilla == i ){
+                    matsilla[i][j]= "1";
+                    
+                }else{
+                    matsilla[i][j]= "0";
+                }
+                
             
         }
     }
     
-    public void escriba(int mat[ ][ ])
+    public void escriba(String mat[ ][ ])
     {
 
         int i, j;
